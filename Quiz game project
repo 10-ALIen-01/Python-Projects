@@ -1,0 +1,90 @@
+## Greeting to the game
+print("Welcome to the Quiz Game")
+name = input("What's your name? ")
+print("Hi " + name + ", Isn't it a good day to try out a new game?!")
+
+## game opening
+def play_game():
+    score = 0
+    while True:
+        answer = input("Are you thrilled to plaaaaaay? ")
+    ## to be able to answer with thrilling "yessssssssss" or "yes, I want to play" or if the user is a bit down and said "ok" meh
+        if "no" in answer.lower():
+            print("Why did you open then game then 😒 \nBye yasta👋")
+            quit()
+        elif "yes" in answer.lower() or "sure" in answer.lower():
+            print("YALLAAAAAA! LET'S PLAAAAAY! 🤸‍♂️") 
+            break
+        else: 
+            print("Sorry, didn't get your response\nplease respond with yes or ok")
+
+
+    ## List of questions to be able to print total number of questions at the end showing the score
+    questions = [
+        "What is the longest river in the world?",
+        "How many bones are in the human body?",
+        "What food never spoils?",
+        "What is the largest desert in the world?",
+        "What is the chemical symbol for gold?"
+        # Add more questions here
+    ]
+
+    ## game started 
+    question_1 = input("what is the longest river in the world? ")
+    if "river nile" in question_1.lower() or "nile" in question_1.lower() or "النيل" in question_1.lower() or "نهر النيل" in question_1.lower():
+        print("Correct ✔️\n📖True Fact: If you were American you wouldn't have named where you live")
+        score += 1
+    else:
+        print("Incorrect ❌\n Don't know how didn't you get this right\n ايه مشربتش من نيلها 😒")
+
+
+    question_2 = input("How many bones are in the human body? ")
+    if "206 bones" in question_2.lower() or "two hundred and six" in question_2.lower() or "two hundred 0 six" in question_2.lower() or "206" in question_2.lower():
+        print("Correct ✔️\n good job MR Biology 😂")
+        score += 1
+    else:
+        print("Incorrect ❌\nYou gotta know your body better maaaaan, it's 184 bones if we exclude the 22 we doubt you have in your head 💀")
+        
+        
+    question_3 = input("What food never spoils? ")
+    if "honey" in question_3.lower() or "العسل" in question_3.lower() or "عسل" in question_3.lower():
+        print("Correct ✔️\nYou could have wtrote your name btw 😄")
+        score += 1
+    elif name.lower() in question_3.lower() or "me" in question_3.lower():
+        print("Correct ✔️\nYa 3am mashy 😂")
+        score += 1
+    else:
+        print("Incorrect ❌\n💡Tip: Think about something so sweet")
+
+
+    question_4 = input("What is the largest desert in the world? ")
+    if "antarctica" in question_4.lower():
+        print("Correct ✔️\n📖True Fact: There are no native peoples in Antarctica.")
+        score += 1
+    else:
+        print("Incorrect ❌\n💡Tip: Not all deserts are sandy")
+
+
+    question_5 = input("What is the chemical symbol for Copper? ")
+    if "cu" in question_5.lower():
+        print("Correct ✔️")
+        score += 1
+    else:
+        print("Incorrect ❌\nAhaaaa someone were escaping Chemistry Classes, CU 😏")
+
+    ## final score
+    total_questions = len(questions)
+    print("you got " + str(score) + " out of " + str(total_questions) + " question(s) correct!\nThat's " + str((score/total_questions)*100) +"%.")
+
+    return score
+## if user wants to play again
+score = play_game()
+while True:
+    play_again = input("Do you want to play again? ")
+    if "yes" in play_again.lower():
+        play_game()
+    elif "no" in play_again.lower():
+        print("Thank you for playing 😊")
+        quit()
+    else:
+        print("I quite didn't get that, please answer with yes or no")
